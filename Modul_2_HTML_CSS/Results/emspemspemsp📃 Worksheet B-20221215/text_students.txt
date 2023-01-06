@@ -1,0 +1,21 @@
+In this module we will use HTML and CSS.
+
+Example of a CSS rule:
+body {
+color: #ff0000;
+font-family: Arial, Verdana; }
+
+A certain HTML element allows text to be displayed as it is entered in the editor. This is called 'preformatted'.
+To boot an Ubuntu operating system, you need to type the command sudo reboot in the terminal and press the Enter key. After that, the operating system responds with the message The system is going down and the PC shuts down.
+
+Very important words or text passages are highlighted.
+
+Words or text passages that are emphasized when speaking can also be emphasized in HTML.
+
+A text can be highlighted, like with a text marker.
+
+In mathematics, some text is superscripted or subscripted, just like pi2.
+
+The text in the footer is often printed small.
+
+Of course you can combine all these HTML elements. Whether this always makes sense, however, is questionable. In any case, make sure that the elements are always nested correctly and always follow the basic rule: the first opened element is closed last.

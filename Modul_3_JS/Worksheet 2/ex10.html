@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        border: 2px solid black;
+        margin: -3px;
+      }
+    </style>
+    <script>
+      function blue1() {
+        document.getElementById("visa").style.backgroundColor = "blue";
+        document.getElementById("master").style.backgroundColor = "";
+        document.getElementById("pay").style.backgroundColor = "";
+      }
+      function blue2() {
+        document.getElementById("visa").style.backgroundColor = "";
+        document.getElementById("master").style.backgroundColor = "blue";
+        document.getElementById("pay").style.backgroundColor = "";
+      }
+      function blue3() {
+        document.getElementById("visa").style.backgroundColor = "";
+        document.getElementById("master").style.backgroundColor = "";
+        document.getElementById("pay").style.backgroundColor = "blue";
+      }
+      function pays() {
+        var name = document.getElementById("name").value;
+        var numberas = document.getElementById("numberas").value;
+        var email = document.getElementById("email").value;
+        document.getElementById("payvv").innerHTML =
+          "Hi " + name + ", an invoice of " + numberas + " will be send to " + email + " Thanks for the order!"; 
+      }
+    </script>
+  </head>
+  <body onload="blue1()">
+    Name:
+    <input type="text" id="name" /> <br />
+    Price:
+    <input type="number" id="numberas" /> <br />
+    Email:
+    <input type="text" id="email" />
+    <h3>Please choose the payment method:</h3>
+    <img src="img/visa.png" id="visa" onclick="blue1()" />
+    <img src="img/mastercard.png" id="master" onclick="blue2()" />
+    <img src="img/paypal.png" id="pay" onclick="blue3()" /> <br />
+    <button onclick="pays()">Pay</button>
+    <div id="payvv"></div>
+  </body>
+</html>

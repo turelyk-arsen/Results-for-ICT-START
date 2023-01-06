@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+            function showCard() {
+              var query = prompt("Write the number between 1 and 14:");
+              var colour = prompt("Use as input s for Spade, d for Diamond, c for Clubs and h for Heart. Write the letter:");
+              document.getElementById("card").innerHTML =
+                "<img src=img/cards/" + query + colour+".png>";
+            }
+    </script>
+  </head>
+  <body onload="showCard ()">
+    <div id="card"></div>
+  </body>
+</html>
