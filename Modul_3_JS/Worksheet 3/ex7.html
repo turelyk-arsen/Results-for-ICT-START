@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function timeWork() {
+        var timeWork = parseInt(document.getElementById("timeWork").value);
+        if (timeWork < 8 || timeWork >= 17) {
+          document.getElementById("output").innerHTML =
+            "This coffee shop is closed.";
+          document.getElementById("output").style.color = "red";
+        } else if (timeWork < 14 && timeWork >= 12) {
+          document.getElementById("output").innerHTML = "It's break time!";
+          document.getElementById("output").style.color = "orange";
+        } else {
+          document.getElementById("output").innerHTML =
+            "Welcome to the coffee shop!";
+          document.getElementById("output").style.color = "green";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Working time:
+    <input type="number" id="timeWork" />
+    <button onclick="timeWork ()">Check</button>
+    <div id="output"></div>
+  </body>
+</html>

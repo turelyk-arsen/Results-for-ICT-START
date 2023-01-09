@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function orderNow () {
+        var article = document.getElementById("article").value;
+        var amount = document.getElementById("amount").value;
+
+        if (article.length <= 3) {
+            document.getElementById("error").style.backgroundColor = "red";
+            document.getElementById("error").innerHTML += "Your article should have at least three letters!" + "<br>";
+        } else {
+            document.getElementById("error").innerHTML = "";
+            document.getElementById("outPut").innerHTML += "Your order is " + article + " and amount " + amount + "<br>";;
+            document.getElementById("outPut").style.color = "green";
+        }
+    }
+</script>
+<body>
+    Article: 
+    <select id="article">
+        <option value=""></option>
+        <option value="1kg apples">1kg apples</option>
+        <option value="Gaming mouse">Gaming mouse</option>
+        <option value="Gaming keyboard">Gaming keyboard</option>
+        <option value="PS4 – God of War">PS4 – God of War</option>
+        <option value="4K 27in monitor">4K 27in monitor</option>
+        <option value="Orange jus">Orange jus</option>
+        <option value="10€ paysafecard">10€ paysafecard</option>
+    </select>
+    <br>
+    Amount:
+    <select id="amount">
+        <option value="1">x1</option>
+        <option value="2">x2</option>
+        <option value="3">x3</option>
+    </select>
+    <br>
+    <button onclick="orderNow ()">Order now</button>
+    <div id="outPut"></div>
+    <div id="error"></div>
+
+    
+</body>
+</html>

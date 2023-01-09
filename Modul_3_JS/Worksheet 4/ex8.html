@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script>
+      function series() {
+        var series = document.getElementById("series").value;
+        if (series.length < 3) {
+          document.getElementById("error").innerHTML =
+            '<div class="text-bg-danger w-50 p-2 text-center">Error!!!</div>';
+        } else {
+          document.getElementById("error").innerHTML = "";
+          document.getElementById("listOfSerial").innerHTML +=
+            '<option value="">' + series + "</option>";
+          var number = document.getElementById("listOfSerial");
+          var nnn = number.length;
+          document.getElementById("number").innerHTML =
+            "Number of items is " + nnn;
+          document.getElementById("listOfSerial").options[
+            nnn - 1
+          ].selected = true;
+        }
+      }
+      function deletet() {
+        var selectedd = document.getElementById("listOfSerial");
+        var index = selectedd.selectedIndex;
+        selectedd.options[index].outerHTML = "";
+        var number = document.getElementById("listOfSerial");
+          var nnn = number.length;
+          document.getElementById("number").innerHTML =
+            "Number of items is " + nnn;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="col-6 m-auto p-3">
+      <p>Series:</p>
+      <input type="text" id="series" />
+      <button class="btn btn-secondary" type="submit" onclick="series ()">
+        Add
+      </button>
+      <p>List of series:</p>
+      <select name="" id="listOfSerial" multiple></select>
+      <div id="error"></div>
+      <div id="number"></div>
+      <button class="btn btn-secondary" type="submit" onclick="deletet ()">
+        Delete
+      </button>
+    </div>
+  </body>
+</html>

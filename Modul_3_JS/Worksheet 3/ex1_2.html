@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function equel() {
+        var number1 = parseFloat(document.getElementById("number1").value);
+        var number2 = parseFloat(document.getElementById("number2").value);
+        if (number1 == number2) {
+          document.getElementById("results").innerHTML =
+            "The numbers are equal!";
+          document.getElementById("results").style.color = "lime";
+        } else {
+          document.getElementById("results").innerHTML =
+            "The numbers are NOT equal!";
+          document.getElementById("results").style.color = "red";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <span>Number 1</span>
+    <input type="number" id="number1" placeholder="type number 1" /> <br />
+    <span>Number 2</span>
+    <input type="number" id="number2" placeholder="type number 2" /> <br />
+    <button onclick="equel()">Check</button>
+    <div id="results"></div>
+  </body>
+</html>

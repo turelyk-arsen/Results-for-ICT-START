@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <title>Document</title>
+    <style>
+      img {
+        height: 20px;
+      }
+    </style>
+    <script>
+      function addInfo() {
+        var textName = document.getElementById("textName").value;
+        var gradeNum = document.getElementById("gradeNum").value;
+
+        if (textName == 0 || gradeNum == 0) {
+          document.getElementById("error").innerHTML =
+            "Please fill in the fields.";
+        } else if (textName.length < 3) {
+          document.getElementById("error").innerHTML = "Invalid name.";
+        } else if (parseInt(gradeNum) >= 60 || parseInt(gradeNum) <= 0) {
+          document.getElementById("error").innerHTML =
+            "Must be between 1 and 60.";
+        } else if (gradeNum == 0 && textName == 0) {
+          document.getElementById("error").innerHTML =
+            "Please fill in the fields.";
+        } else {
+            var gender = "m";
+            var radioCheck = document.getElementById("woman").checked;
+            if (radioCheck == true) {
+                gender = "f";
+            }
+
+
+          document.getElementById("error").innerHTML = "";
+          document.getElementById("output").innerHTML +=
+            "<li class='list-group-item list-group-item-primary w-50'>" +
+            textName + "  (" + gradeNum + ")  " + "  <img src='img/"+gender +".png'>" + "</li>";
+        }
+      }
+      function clearall () {
+        document.getElementById("output").innerHTML = "";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="m-3 p-3">
+      <div>
+        <p class="h3 text-danger p-2" id="error"></p>
+      </div>
+      <h3>
+        <small class="text-muted">Name:</small>
+      </h3>
+      <input
+        type="text"
+        class="form-control w-25"
+        id="textName"
+        placeholder="Your name"
+        checked
+      />
+      <h3>
+        <small class="text-muted">Grade:</small>
+      </h3>
+      <input
+        type="number"
+        class="form-control w-25"
+        id="gradeNum"
+        placeholder="Your grade"
+        checked
+      />
+
+      <input type="radio" class="form-check-input" value="m" name="radio" id="man" checked/> M
+      <input type="radio" class="form-check-input" value="w" name="radio" id="woman" /> W
+      <div>
+        <button onclick="addInfo ()" type="button" class="btn btn-dark m-3">
+          Add
+        </button>
+        <button onclick="clearall ()" type="button" class="btn btn-dark m-3">
+            Clear
+          </button>
+      </div>
+
+      <div class="p-3">
+        <ol class="list-group list-group-numbered" id="output"></ol>
+      </div>
+    </div>
+  </body>
+</html>

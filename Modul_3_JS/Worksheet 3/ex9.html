@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style media="screen">
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        text-align: left;
+        height: 40vi;
+      }
+      .grid-item {
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .grid-item:hover {
+        cursor: pointer;
+        border: 15px solid black;
+      }
+    </style>
+    <script>
+      var textShow = "X";
+
+      function textShow1() {
+        var textShow1 = document.getElementById("textShow1");
+        if (textShow1.innerHTML == "") {
+          textShow1.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+          else textShow = "X";
+        }
+      }
+      function textShow2() {
+        var textShow2 = document.getElementById("textShow2");
+        if (textShow2.innerHTML == "") {
+          textShow2.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+         else textShow = "X";
+        }
+      }
+      function textShow3() {
+        var textShow3 = document.getElementById("textShow3");
+        if (textShow3.innerHTML == "") {
+          textShow3.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+         else textShow = "X";
+        }
+      }
+      function textShow4() {
+        var textShow4 = document.getElementById("textShow4");
+        if (textShow4.innerHTML == "") {
+          textShow4.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+         else textShow = "X";
+        }
+      }
+      function textShow5() {
+        var textShow5 = document.getElementById("textShow5");
+        if (textShow5.innerHTML == "") {
+          textShow5.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+         else textShow = "X";
+        }
+      }
+      function textShow6() {
+        var textShow6 = document.getElementById("textShow6");
+        if (textShow6.innerHTML == "") {
+          textShow6.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+         else textShow = "X";
+        }
+      }
+      function textShow7() {
+        var textShow7 = document.getElementById("textShow7");
+        if (textShow7.innerHTML == "") {
+          textShow7.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+         else textShow = "X";
+        }
+      }
+      function textShow8() {
+        var textShow8 = document.getElementById("textShow8");
+        if (textShow8.innerHTML == "") {
+          textShow8.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+         else textShow = "X";
+        }
+      }
+      function textShow9() {
+        var textShow9 = document.getElementById("textShow9");
+        if (textShow9.innerHTML == "") {
+          textShow9.innerHTML = "<h1>" + textShow + "</h1>";
+        if (textShow == "X") textShow = "O";
+         else textShow = "X";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item" onclick="textShow1 ()" id="textShow1"></div>
+      <div class="grid-item" onclick="textShow2 ()" id="textShow2"></div>
+      <div class="grid-item" onclick="textShow3 ()" id="textShow3"></div>
+
+      <div class="grid-item" onclick="textShow4 ()" id="textShow4"></div>
+      <div class="grid-item" onclick="textShow5 ()" id="textShow5"></div>
+      <div class="grid-item" onclick="textShow6 ()" id="textShow6"></div>
+
+      <div class="grid-item" onclick="textShow7 ()" id="textShow7"></div>
+      <div class="grid-item" onclick="textShow8 ()" id="textShow8"></div>
+      <div class="grid-item" onclick="textShow9 ()" id="textShow9"></div>
+    </div>
+  </body>
+</html>

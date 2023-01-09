@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function grade() {
+        var grade = parseInt(document.getElementById("grade").value);
+        if (grade <= 9 && grade >= 1) {
+          document.getElementById("results").innerHTML = "Very bad!";
+          document.getElementById("results").style.color = "red";
+        } else if (grade <= 19 && grade >= 10) {
+          document.getElementById("results").innerHTML = "Bad!";
+          document.getElementById("results").style.color = "grey";
+        } else if (grade <= 29 && grade >= 20) {
+          document.getElementById("results").innerHTML = "Insufficient!";
+          document.getElementById("results").style.color = "yellow";
+        } else if (grade <= 37 && grade >= 30) {
+          document.getElementById("results").innerHTML = "Sufficient!";
+          document.getElementById("results").style.color = "black";
+        } else if (grade <= 38 && grade >= 41) {
+          document.getElementById("results").innerHTML = "Satisfying!";
+          document.getElementById("results").style.color = "mangenta";
+        } else if (grade <= 47 && grade >= 42) {
+          document.getElementById("results").innerHTML = "Good!";
+          document.getElementById("results").style.color = "lime";
+        } else if (grade <= 52 && grade >= 48) {
+          document.getElementById("results").innerHTML = "Very good!";
+          document.getElementById("results").style.color = "blue";
+        } else if (grade <= 60 && grade >= 53) {
+          document.getElementById("results").innerHTML = "Excellent!";
+          document.getElementById("results").style.color = "green";
+        } else {
+          document.getElementById("results").innerHTML = "Invalid grade!";
+          document.getElementById("results").style.color = "orange";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Your grade number:
+    <input type="number" id="grade" /> <br />
+    <button onclick="grade()">Feedback</button>
+    <div id="results"></div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checking () {
+            var whatNum = parseFloat(document.getElementById("whatNum").value);
+            if (whatNum<0) {
+                document.getElementById("results").innerHTML = "This is negative number";
+                document.getElementById("results").style.color = "red"
+            } else if (whatNum>0) {
+                document.getElementById("results").innerHTML = "This is positive number";
+                document.getElementById("results").style.color = "green"
+            } else {
+                document.getElementById("results").innerHTML = "This is neutral number";
+                document.getElementById("results").style.color = "grey"
+            }
+        }
+    </script>
+</head>
+<body>
+    Number:
+    <input type="number" id="whatNum">
+    <button onclick="checking()">Check</button>
+    <div id="results"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    img {
+      width: 10%;
+    }
+  </style>
+  <script>
+    function orderNow() {
+      var article123 = document.getElementById("article").selectedIndex;
+      var article = document.getElementById("article").options[article123].text;
+
+      var amount = document.getElementById("amount").value;
+
+      document.getElementById("outPut").innerHTML +=
+        "Your order is " + article + " and amount " + amount + "<br>";
+      document.getElementById("outPut").style.color = "lime";
+    }
+    function magess() {
+      var article = document.getElementById("article").value;
+    //   document.getElementById("imagess").innerHTML =
+    //     '<img src="img/' + article + '.jpg"/>';
+        document.getElementById("imagess").src =
+        'img/' + article + '.jpg';
+    }
+  </script>
+  <body>
+    Article:
+    <select id="article" onchange="magess ()">
+      <option value="no-image"></option>
+      <option value="apples">1kg apples</option>
+      <option value="gamingmouse">Gaming mouse</option>
+      <option value="keyboard">Gaming keyboard</option>
+      <option value="gow-ps4">PS4 – God of War</option>
+      <option value="monitor">4K 27in monitor</option>
+      <option value="orangejus">Orange jus</option>
+      <option value="paysafecard">10€ paysafecard</option>
+    </select>
+    <br />
+    <img id="imagess" src="img/no-image.jpg" alt="">
+    <br>
+    Amount:
+    <select id="amount">
+      <option value="1">x1</option>
+      <option value="2">x2</option>
+      <option value="3">x3</option>
+    </select>
+    <br />
+    <button onclick="orderNow ()">Order now</button>
+    <div id="outPut"></div>
+  </body>
+</html>
