@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #error,
+      #error1 {
+        color: red;
+      }
+    </style>
+    <script>
+      function addText() {
+        var textArticle = document.getElementById("textArticle").value.trim();
+        var error = document.getElementById("error");
+        var selectText = document.getElementById("selectText");
+
+        if (textArticle == "") {
+          error.innerHTML = "Error!!! Please type in an article.";
+        } else {
+          selectText.innerHTML +=
+            '<option value="' + textArticle + '">' + textArticle + "</option>";
+          error.innerHTML = "";
+        }
+      }
+      //     if (textArticle == "") {
+      //       document.getElementById("error").innerHTML = "Error!!! Please type in an article.";
+      //     } else {
+      //       document.getElementById("selectText").innerHTML +=
+      //         '<option value="">' + textArticle + "</option>";
+      //       document.getElementById("error").innerHTML = "";
+      //     }
+      //   }
+      function showAll() {
+        var selectText = document.getElementById("selectText");
+        var error = document.getElementById("error");
+        var orderList = document.getElementById("orderList");
+
+        if (selectText.length == 0) {
+          error.innerHTML = "Error!!! There are no items in the list.";
+        } else {
+            orderList.innerHTML = error.innerHTML = "";
+          for (var i = 0; i < selectText.length; i++) {
+            orderList.innerHTML +=
+              "<li>" + selectText.options[i].value + "</li>";
+          }
+        }
+      }
+      function showInverse() {
+        var selectText = document.getElementById("selectText");
+        var error = document.getElementById("error");
+        var inversedList = document.getElementById("inversedList");
+
+        if (selectText.length == 0) {
+          error.innerHTML = "Error!!! There are no items in the list.";
+        } else {
+            inversedList.innerHTML = error.innerHTML = "";
+          for (var i = selectText.length - 1; i >= 0; i--) {
+            inversedList.innerHTML +=
+              "<li>" + selectText.options[i].value + "</li>";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="error"></div>
+    <div id="error1"></div>
+    Article:
+    <input type="text" id="textArticle" autofocus /> <br />
+    <button onclick="addText ()">Add</button>
+    <br />
+    <p style="text-decoration: underline">List of articles:</p>
+    <select style="width: 200px" id="selectText" multiple></select>
+    <br />
+    <button onclick="showAll ()">Show all</button>
+    <button onclick="showInverse ()">Show inverse</button>
+    <div>
+      <ol id="orderList"></ol>
+      <ol id="inversedList"></ol>
+    </div>
+  </body>
+</html>

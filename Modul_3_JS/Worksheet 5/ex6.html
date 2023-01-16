@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style media="screen">
+      #divError {
+        color: red;
+      }
+      img {
+        height: 50px;
+      }
+    </style>
+    <script type="text/javascript">
+      function orderPizza() {
+        var clientName = document.getElementById("clientName").value.trim();
+        var selectSize = document.getElementById("selectSize");
+        var divError = document.getElementById("divError");
+        var selectTop = document.getElementById("selectTop");
+        var checkbox = document.getElementById("checkbox");
+        var divOutput = document.getElementById("divOutput");
+
+        if (clientName == "") {
+          divError.innerHTML = "Error: Name cannot be empty.";
+        } else {
+          divError.innerHTML = "";
+          var summa = parseFloat(selectSize.value);
+
+          for (var i = 0; i < selectTop.length; i++) {
+            if (selectTop.options[i].selected == true) {
+              summa += parseFloat(selectTop.options[i].value);
+            }
+          }
+          if (checkbox.checked == true) {
+            summa = summa * 0.9;
+          }
+          divOutput.innerHTML =
+            " <h2><strong>Summary</strong></h2>\
+                      <p><strong>Name: </strong>" +
+            clientName +
+            "</p>\
+                      <p><strong>Size: </strong>" +
+            selectSize.options[selectSize.selectedIndex].text +
+            " </p>\
+                      <br><p><strong>Toppings:</strong><br></p> ";
+
+          for (var i = 0; i < selectTop.length; i++) {
+            if (selectTop.options[i].selected == true) {
+              divOutput.innerHTML += selectTop.options[i].text + "<br>";
+            }
+          }
+          divOutput.innerHTML += "<p><strong>10% Coupon:</strong>";
+          if (checkbox.checked == true) {
+            divOutput.innerHTML += "Yes</p>";
+          } else {
+            divOutput.innerHTML += "No</p>";
+          }
+          divOutput.innerHTML +=
+            "-----------------------------<br><p><strong>Total: </strong>" +
+            summa +
+            " €.</p>";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <img src="img/pizza.png" />
+    <img src="img/pizza.png" />
+    <img src="img/pizza.png" />
+    <img src="img/pizza.png" />
+    <h1>Online Pizza Configurator!</h1>
+    <div id="divError"></div>
+    Name: <input type="text" id="clientName" autofocus /> <br />
+    Size:
+    <select id="selectSize">
+      <option value="10">Small (10€)</option>
+      <option value="15">Medium (15€)</option>
+      <option value="20">Large (20€)</option>
+    </select>
+    <br />
+    Toppings: <br /><select multiple id="selectTop">
+      <option value="0.70">Mushroom (+0.7€)</option>
+      <option value="0.70">Chili (+0.7€)</option>
+      <option value="1.00">Cooked Ham (+1€)</option>
+      <option value="0.70">Honey (+0.7€)</option>
+      <option value="1.00">Tuna (+1€)</option>
+      <option value="1.00">Bacon (+1€)</option>
+      <option value="0.70">Olives (+0.7€)</option>
+      <option value="0.70">Pepper (+0.7€)</option>
+    </select>
+    <br />
+    10% Coupon? <input type="checkbox" value="10%" id="checkbox" /> <br />
+    <button type="button" onclick="orderPizza ()">Order now</button>
+    <div id="divOutput"></div>
+  </body>
+</html>

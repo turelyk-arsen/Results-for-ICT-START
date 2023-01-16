@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #error,
+      #error1 {
+        color: red;
+      }
+    </style>
+    <script>
+      function addText() {
+        var textArticle = document.getElementById("textArticle").value.trim();
+        var textPrice = parseFloat(document.getElementById("textPrice").value);
+        var error = document.getElementById("error");
+        var selectText = document.getElementById("selectText");
+
+        if (textArticle == "") {
+          error.innerHTML = "Error!!! Please type in an article.";
+        } else {
+          selectText.innerHTML +=
+            '<option value="' +
+            textPrice +
+            '">' +
+            textArticle +
+            " (" +
+            textPrice +
+            ")" +
+            "</option>";
+          error.innerHTML = "";
+        }
+      }
+
+      function showAll() {
+        var selectText = document.getElementById("selectText");
+        var textPrice = parseFloat(document.getElementById("textPrice").value);
+        var error = document.getElementById("error");
+        var orderList = document.getElementById("orderList");
+        var totalPrice = document.getElementById("totalPrice");
+        var price = 0;
+
+        if (selectText.length == 0) {
+          error.innerHTML = "Error!!! There are no items in the list.";
+        } else {
+          orderList.innerHTML = error.innerHTML = "";
+          for (var i = 0; i < selectText.length; i++) {
+            orderList.innerHTML +=
+              "<li>" + selectText.options[i].text + "</li>";
+            price += parseInt(selectText.options[i].value);
+            totalPrice.innerHTML = "Total price: " + price;
+          }
+        }
+      }
+      function showInverse() {
+        var selectText = document.getElementById("selectText");
+        var error = document.getElementById("error");
+        var orderList = document.getElementById("orderList");
+        var totalPrice = document.getElementById("totalPrice");
+        var price = 0;
+
+        if (selectText.length == 0) {
+          error.innerHTML = "Error!!! There are no items in the list.";
+        } else {
+          orderList.innerHTML = error.innerHTML = "";
+          for (var i = selectText.length - 1; i >= 0; i--) {
+            orderList.innerHTML +=
+              "<li>" + selectText.options[i].text + "</li>";
+            price += parseInt(selectText.options[i].value);
+            totalPrice.innerHTML = "Total price: " + price;
+          }
+        }
+      }
+      function showSelected() {
+        var selectText = document.getElementById("selectText");
+        var error = document.getElementById("error");
+        var orderList = document.getElementById("orderList");
+        var totalPrice = document.getElementById("totalPrice");
+        var price = 0;
+
+        if (selectText.length == 0) {
+          error.innerHTML = "Error!!! There are no items in the list.";
+        } else {
+          orderList.innerHTML = error.innerHTML = "";
+          var counter = 0;
+          for (var i = 0; i < selectText.length; i++) {
+            if (selectText.options[i].selected == true) {
+              counter++;
+              orderList.innerHTML +=
+                "<li>" + selectText.options[i].text + "</li>";
+              price += parseInt(selectText.options[i].value);
+              totalPrice.innerHTML = "Total price: " + price;
+            }
+          }
+          if (counter == 0) {
+            error.innerHTML = "No items selected.";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="error"></div>
+    <div id="error1"></div>
+    Article:
+    <input type="text" id="textArticle" autofocus /> <br />
+    Price:
+    <input type="number" id="textPrice" autofocus /> <br />
+    <button onclick="addText ()">Add</button>
+    <br />
+    <p style="text-decoration: underline">List of articles:</p>
+    <select style="width: 200px" id="selectText" multiple></select>
+    <br />
+    <button onclick="showAll ()">Show all</button>
+    <button onclick="showInverse ()">Show inverse</button>
+    <button onclick="showSelected ()">Show selected</button>
+
+    <div>
+      <ol id="orderList"></ol>
+    </div>
+    <p id="totalPrice"></p>
+  </body>
+</html>
