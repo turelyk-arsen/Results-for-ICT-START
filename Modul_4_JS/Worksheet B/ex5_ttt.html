@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .grid-container{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        text-align: left;
+        height: 50vi;
+      }
+      .grid-item {
+        border: 1px solid black;
+        font-size: 150px;
+        /* in ws */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .grid-item:hover {
+        cursor: pointer;
+        border: 5px solid black;
+      }
+    </style>
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+        var player = "X";
+        cellClicked(n);
+        // function cellClicked_1(){
+        //     var div = document.getElementById("cell_1");
+        //     clik (div);
+        // }
+        // function cellClicked_2(){
+        //     var div = document.getElementById("cell_2");
+        //     clik (div);
+        // }
+        // function cellClicked_3(){
+        //     var div = document.getElementById("cell_3");
+        //     clik (div);
+        // }
+        // function cellClicked_4(){
+        //     var div = document.getElementById("cell_4");
+        //     clik (div);
+        // }
+        // function cellClicked_5(){
+        //     var div = document.getElementById("cell_5");
+        //     clik (div);
+        // }
+        // function cellClicked_6(){
+        //     var div = document.getElementById("cell_6");
+        //     clik (div);
+        // }
+        // function cellClicked_7(){
+        //     var div = document.getElementById("cell_7");
+        //     clik (div);
+        // }
+        // function cellClicked_8(){
+        //     var div = document.getElementById("cell_8");
+        //     clik (div);
+        // }
+        // function cellClicked_9(){
+        //     var div = document.getElementById("cell_9");
+        //     clik (div);
+        // }
+    </script>
+  </head>
+  <body>
+    <div class="grid-container">
+        <div class="grid-item" id="cell_1" onclick="cellClicked(1)"></div>
+        <div class="grid-item" id="cell_2" onclick="cellClicked(2)"></div>
+        <div class="grid-item" id="cell_3" onclick="cellClicked(3)"></div>
+        <div class="grid-item" id="cell_4" onclick="cellClicked(4)"></div>
+        <div class="grid-item" id="cell_5" onclick="cellClicked(5)"></div>
+        <div class="grid-item" id="cell_6" onclick="cellClicked(6)"></div>
+        <div class="grid-item" id="cell_7" onclick="cellClicked(7)"></div>
+        <div class="grid-item" id="cell_8" onclick="cellClicked(8)"></div>
+        <div class="grid-item" id="cell_9" onclick="cellClicked(9)"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/script.js"></script>
+    <script>
+      function display() {
+        var firstNumber = parseInt(document.getElementById("firstNumber").value.trim());
+        var secondNumber = parseInt(document.getElementById("secondNumber").value.trim());
+        var output = document.getElementById("output");
+        output.innerHTML = "";
+
+        if (firstNumber == secondNumber || firstNumber == "" || secondNumber == "") {
+            setBorder("firstNumber", "red");
+            setBorder("secondNumber", "red");
+        } else {
+            removeBorder ("firstNumber");
+            removeBorder ("secondNumber");
+            count (firstNumber, secondNumber, output);
+        }
+    }
+    </script>
+  </head>
+  <body>
+    From:
+    <input type="number" id="firstNumber" placeholder="Number" /> <br />
+    To:
+    <input type="number" id="secondNumber" placeholder="Number" /> <br />
+    <button onclick="display ()">Count</button>
+    <div id="output"></div>
+  </body>
+</html>

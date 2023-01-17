@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      select{
+        min-width: 200px;
+      }
+      #divError{
+        color:red;
+      }
+    </style>
+    <script src="js/functions.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        function showAllClicked(){
+          var divError = document.getElementById("divError")
+          var olOutput = document.getElementById("olOutput")
+          var list = document.getElementById("selStudents")
+
+          if(list.length == 0){
+            divError.innerHTML = "There are no items in the list."
+          }
+          else{
+            divError.innerHTML = ""
+            outputList("olOutput","selStudents");
+          }
+        }
+        function addClicked(){
+          var input = document.getElementById("inStudent").value.trim()
+          var list = document.getElementById("selStudents")
+          var divError = document.getElementById("divError")
+
+          if(input == ""){
+            divError.innerHTML = "Please type in an article."
+          }
+          else{
+            divError.innerHTML = ""
+            addList("inStudent", "selStudents")
+          }
+        }
+    </script>
+  </head>
+  <body>
+      <div id="divError">
+
+      </div>
+      Student: <input type="text" id="inStudent" autofocus> <br>
+      <button type="button" onclick="addClicked()">Add</button> <br><br>
+      <u>List of students:</u><br>
+      <select id="selStudents" multiple>
+
+      </select>
+      <br>
+      <button type="button" onclick="showAllClicked()">Show all</button>
+      <br>
+      <ol id="olOutput">
+
+      </ol>
+  </body>
+</html>

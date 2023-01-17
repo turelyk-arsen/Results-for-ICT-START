@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=#, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/script.js"></script>
+    <script>
+        function orderDrinks () {
+            var order = document.getElementById("order").value;
+            var amount = document.getElementById("amount").value;
+            callAlert (order, amount);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="order">
+    <input type="number" name="" id="amount" placeholder="amount">
+    <button onclick="orderDrinks ()">Order</button>
+</body>
+</html>
