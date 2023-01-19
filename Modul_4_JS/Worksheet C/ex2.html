@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/script.js"></script>
+    <script>
+      function html() {
+        var minNumber = parseFloat(document.getElementById("minNumber").value.trim()) ;
+        var maxNumber = parseFloat(document.getElementById("maxNumber").value.trim());
+        var randomResults = document.getElementById("outPut");
+        if (minNumber == maxNumber) {
+          showBorder("minNumber", "red");
+          showBorder("maxNumber", "red");
+        } else if (maxNumber == "") {
+          showBorder("maxNumber", "red");
+          removeBorder("minNumber");
+        } else if (minNumber == "") {
+          showBorder("minNumber", "red");
+          removeBorder("maxNumber");
+        } else if (minNumber <= maxNumber) {
+          removeBorder("minNumber");
+          removeBorder("maxNumber");
+          randomResults.innerHTML = getRandomNumber (minNumber, maxNumber)
+       }
+      }
+      function myAlert() {
+        var minNumber = parseFloat(document.getElementById("minNumber").value.trim()) ;
+        var maxNumber = parseFloat(document.getElementById("maxNumber").value.trim());
+        var randomResults = document.getElementById("outPut");
+        if (minNumber == maxNumber) {
+          showBorder("minNumber", "red");
+          showBorder("maxNumber", "red");
+        } else if (maxNumber == "") {
+          showBorder("maxNumber", "red");
+          removeBorder("minNumber");
+        } else if (minNumber == "") {
+          showBorder("minNumber", "red");
+          removeBorder("maxNumber");
+        } else if (minNumber <= maxNumber) {
+          removeBorder("minNumber");
+          removeBorder("maxNumber");
+          alert(getRandomNumber (minNumber, maxNumber))
+       }
+      }
+
+      function myConsole() {
+        var minNumber = parseFloat(document.getElementById("minNumber").value.trim()) ;
+        var maxNumber = parseFloat(document.getElementById("maxNumber").value.trim());
+        var randomResults = document.getElementById("outPut");
+        if (minNumber == maxNumber) {
+          showBorder("minNumber", "red");
+          showBorder("maxNumber", "red");
+        } else if (maxNumber == "") {
+          showBorder("maxNumber", "red");
+          removeBorder("minNumber");
+        } else if (minNumber == "") {
+          showBorder("minNumber", "red");
+          removeBorder("maxNumber");
+        } else if (minNumber <= maxNumber) {
+          removeBorder("minNumber");
+          removeBorder("maxNumber");
+          console.log(getRandomNumber (minNumber, maxNumber))
+       }
+      }
+    </script>
+  </head>
+  <body>
+    Min.:
+    <input type="number" name="" id="minNumber" /> <br />
+    Max.:
+    <input type="number" name="" id="maxNumber" /> <br />
+    Random: <span id="outPut"></span>
+
+    <br />
+    <br />
+    <button onclick="html ()">Html</button>
+    <button onclick="myAlert ()">Alert</button>
+    <button onclick="myConsole ()">Console</button>
+  </body>
+</html>

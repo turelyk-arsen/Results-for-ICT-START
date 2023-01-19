@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/script.js"></script>
+    <script>
+      function outPutHtml() {
+        var liters = document.getElementById("liters").value.trim();
+        if (liters == "") {
+          showBorder("liters", "red");
+        } else {
+          removeBorder("liters");
+          var gallons = liter2gallons(liters);
+          document.getElementById("gallons").value = gallons.toFixed(2);
+        }
+      }
+
+      function outPutAlert() {
+        var liters = document.getElementById("liters").value.trim();
+        if (liters == "") {
+          showBorder("liters", "red");
+        } else {
+          removeBorder("liters");
+          var gallons = liter2gallons(liters);
+          alert(gallons.toFixed(2));
+        }
+      }
+      function outPutConsole() {
+        var liters = document.getElementById("liters").value.trim();
+        if (liters == "") {
+          showBorder("liters", "red");
+        } else {
+          removeBorder("liters");
+          var gallons = liter2gallons(liters);
+          console.log(gallons.toFixed(2));
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Liters:
+    <input type="number" name="" id="liters" /> <br />
+    Gallons:
+    <input type="number" name="gallons" id="gallons" />
+    <br />
+    <br />
+    <br />
+    <button onclick="outPutHtml ()">Html</button>
+    <button onclick="outPutAlert ()">Alert</button>
+    <button onclick="outPutConsole ()">Console</button>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="/js/functions.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        function convertClicked(){
+          var degreesC = parseFloat(document.getElementById("inDegreesC").value);
+          var celsiusF = celsius2fahrenheit(degreesC);
+          document.getElementById("inDegreesF").value = celsiusF;
+        }
+    </script>
+  </head>
+  <body>
+    Degrees C°: <input type="text" id="inDegreesC" value=""  autofocus> <br>
+    Degrees F°: <input type="text" id="inDegreesF" disabled> <br>
+    <button type="button" name="button" onclick="convertClicked()">Convert</button>
+    <br><br>
+    <small><a href="page1.html">Go to page 1</a></small><br>
+    <small><a href="page2.html">Go to page 2</a></small>
+  </body>
+</html>
