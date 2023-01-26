@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      select {
+        width: 200px;
+        height: auto;
+      }
+    </style>
+    <script src="sjs/script.js"></script>
+    <script>
+      var arrayMy = [];
+
+      function addList() {
+        var input = document.getElementById("input").value.trim();
+        var numberList = document.getElementById("numberList");
+        if (input == "") {
+          showBorder("input", "red");
+        } else {
+          showBorder("input", "");
+          arrayMy.push(input);
+          numberList.innerHTML = "Numbers of elements: " + arrayMy.length;
+        }
+      }
+      function onClickfillList() {
+        var list = document.getElementById("list");
+        var numberList = document.getElementById("numberList");
+        fillList(arrayMy, list);
+      }
+      function deleteList() {
+        var list = document.getElementById("list");
+        for (var i = 0; i < list.length+1; i++) {
+          if (list.selectedIndex != -1) {
+            arrayMy.splice(list.options[i].index, 1);
+            fillList(arrayMy, list);
+          }
+        }
+      }
+      function clearList () {
+        arrayMy = [];
+        onClickfillList()
+        numberList.innerHTML = "Numbers of elements: " + arrayMy.length;
+      }
+      function findthings () {
+        var input = document.getElementById("input").value.trim();
+        var list = document.getElementById("list");
+        for (var i = 0; i < arrayMy.length; i++) {
+          if (arrayMy[i] == input) {
+            showBorder("list", "lime");
+            list.selectedIndex = i
+          } else {
+            showBorder("list", "red");
+            list.selectedIndex = -1
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Input: <input type="text" id="input" />
+    <button onclick="addList ()">Add</button>
+    <button onclick="deleteList ()">Delete</button>
+    <button onclick="clearList ()">Clear</button>
+    <button onclick="onClickfillList()">Show all</button>
+    <button onclick="findthings()">Find</button>
+    <br />
+    <br />
+    <select name="" id="list" multiple size="7"></select>
+    <br />
+    <br />
+    <div id="numberList"></div>
+  </body>
+</html>

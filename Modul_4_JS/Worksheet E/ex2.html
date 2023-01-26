@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
+      async function getPrice() {
+        try {
+          await secondFunction();
+        } catch (error) {
+          document.getElementById("output").innerHTML = "ERROR!!!";
+          document.getElementById("output").style.color = "red";
+        }
+      }
+
+      async function secondFunction() {
+        document.getElementById("output").innerHTML = '<img src="loading.gif">';
+        var response = await fetch(URL);
+        var json = await response.json();
+        thirdFunction(json);
+      }
+
+      function thirdFunction(json) {
+        document.getElementById("output").innerHTML =
+          "<br />" +
+          "1 BTC = " +
+          "<br />" +
+          json.bpi.USD.rate +
+          json.bpi.USD.symbol +
+          " <br /> " +
+          json.bpi.EUR.rate +
+          json.bpi.EUR.symbol;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Bitcoin price</h1>
+    <br />
+    <button onclick="getPrice ()">Get current BTC price</button>
+    <br />
+    <div id="output"></div>
+  </body>
+</html>

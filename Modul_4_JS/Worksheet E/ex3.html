@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    var key = "26c7460575906cc4a5d28c21dc801a8a"
+    var URL =
+      "http://api.weatherstack.com/current?access_key="+key+"&query=";
+    async function getWether() {
+      try {
+        await seconddd();
+      } catch (error) {
+        errorPrint(error);
+      }
+    }
+
+    function errorPrint(error) {
+      document.getElementById("output").innerHTML = "Error!!!";
+      document.getElementById("output").style.color = "red";
+    }
+
+    async function seconddd() {
+      document.getElementById("output").innerHTML = '<img src="loading.gif">';
+      var location = document.getElementById("cityName").value
+      var response = await fetch(URL+location);
+      var json = await response.json();
+      third(json);
+    }
+
+    function third(data) {
+      document.getElementById("output").innerHTML = "";
+      var outputWeather = "<ul>"
+        outputWeather += "<li> Country: "+data.location.country + "</li>"
+        outputWeather += "<li> Temperature: "+data.current.temperature + "C</li>"
+      document.getElementById("output").innerHTML = outputWeather;
+    }
+  </script>
+  <body>
+    <h1>Weather INFO</h1>
+    Location:
+    <input type="text" id="cityName" placeholder="your city" />
+    <button onclick="getWether ()">Get Info</button>
+    <br />
+    <div id="output"></div>
+  </body>
+</html>

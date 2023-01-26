@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/script.js"></script>
+    <script>
+        var URL = "https://catfact.ninja/fact";
+        async function getInfo () {
+            await secondFun()
+        }
+
+        async function secondFun () {
+            document.getElementById("outPut").innerHTML = "<img src='loading.gif'>"
+            var response = await fetch(URL)
+            var json = await response.json()
+            thirdFun(json)
+        }
+        
+        function thirdFun(json) {
+           document.getElementById("outPut").innerHTML = json.fact
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Random cats facts!!!</h1>
+    <button onclick="getInfo ()">Get info</button>
+    <p id="outPut"></p>
+</body>
+</html>
